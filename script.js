@@ -1,5 +1,7 @@
 // Replace this with the official ballot URL as soon as it is available.
 const VOTE_LINK = '#vote';
+// Paste the share link from your anonymous Google Form here.
+const SUGGESTION_FORM_URL = '#suggestions';
 
 document.querySelectorAll('[data-vote-link]').forEach((link) => {
   link.href = VOTE_LINK;
@@ -7,6 +9,21 @@ document.querySelectorAll('[data-vote-link]').forEach((link) => {
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
   }
+});
+
+document.querySelectorAll('[data-suggestion-form]').forEach((link) => {
+  link.href = SUGGESTION_FORM_URL;
+  if (SUGGESTION_FORM_URL.startsWith('http')) {
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+  }
+});
+
+document.querySelectorAll('.candidate-image').forEach((image) => {
+  image.addEventListener('error', () => {
+    image.src = 'assets/team/photo-placeholder.svg';
+    image.alt = 'Add a candidate photo';
+  }, { once: true });
 });
 
 const menuButton = document.querySelector('.menu-button');
