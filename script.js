@@ -1,7 +1,7 @@
 // Replace this with the official ballot URL as soon as it is available.
 const VOTE_LINK = '#vote';
 // Paste the share link from your anonymous Google Form here.
-const SUGGESTION_FORM_URL = '#suggestions';
+const SUGGESTION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdipqdS8o-dh5xPzIX1mqfp8YFulomMBaOmQpwlBL5XZzjmVg/viewform?usp=publish-editor';
 
 document.querySelectorAll('[data-vote-link]').forEach((link) => {
   link.href = VOTE_LINK;
